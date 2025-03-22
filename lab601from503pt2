@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Jeremy's Lab6</title>
+  <style>
+    table, th, td {
+  border: 2px solid black;
+}
+  <style type="text/css">
+    body (
+    padding: 7px;)
+  h2 (
+    font - family: Georgia, Times, serif;
+    font - size: 80%;
+    text - shadow: 2px 3px 4px #666666;
+    padding-top: 5px;)
+  .jfsDiv { 
+  border: 4px outset yellow;
+  background-color: red;
+  text-align: center;
+}
+  .jfsDiv2 { 
+  border: 8px outset yellow;
+  background-color: #FF474C;
+  text-align: center;
+}
+    .jfsDiv3 { 
+  border: 6px outset black;
+  background-color: red;
+  text-align: left;
+}
+      .jfsDiv4 { 
+  border: 14px outset black;
+  background-color: green;
+  text-align: right;
+}
+  div {
+  border: 2px solid black;
+  margin-top: 86px;
+  margin-bottom: 50px;
+  margin-right: 50px;
+  margin-left: 50px;
+  background-color: lightblue;
+}
+    </style>
+<script>  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // initiate function after clicktoreveal1 clicked
+      $("#clicktoreveal1").click(function)() {
+        // run function when user clicks button
+        $("#clicktoreveal1").html("Table Structure Components");
+      });
+    $(document).ready(function(){
+      // initiate function after clicktoreveal2 clicked
+      $("#clicktoreveal2").click(function)() {
+        // run function when user clicks button
+        $("#clicktoreveal2").html("Languages");
+      });
+     });
+ </script>
+</head>
+<body>
+  <h2 id="jfsDiv4">Working For Spatial Awareness!</h2>
+<script>
+function displayResult() {
+  document.jfsDiv4.innerHTML = "I think I've learned something";
+}
+</script>
+  <div class="jfsDiv4"> 
+    <h2>Familiarizing with HTTP & CSS</h2>
+    <p>Jeremy's HTML and CSS Webpage!</p>
+    <p>Green background with gray border or...?</p>
+  </div>
+  <div class="jfsDiv3"> 
+    <h4>Does this DIV pop?</h4>
+    <p>Jeremy's HTML and CSS Webpage!</p>
+  </div>
+  <p> YAY PHOTO!</p>
+    <picture>
+    <div id = "jfsphoto">
+      <p><img src="https://i.imgur.com/I8BHmoV.png" alt="Cool Programmer" width="200" height="267" />
+    </picture>
+    <p><cite>created by author</cite></p>
+  <div class="jfsDiv">
+    <p> WOW! Look at this picture of me!</p>
+  </div>
+  <div>
+    <p> Wow! look at this color!</p>
+    <h2>Can you find 3 div on this page?</h2>
+  <div class="jfsDiv2">
+  <table style="width:100%">
+  <tr>
+    <td><button id="clicktoreveal1">Click to reveal...</button></td>
+    <th>BODY</th>
+    <td>Title</td>
+    <td>Header</td>
+    <td>Paragraph</td>
+  </tr>
+  <tr>
+    <td><button id="clicktoreveal2">Click to reveal...</button></td>
+    <th>STANDARD MARKUP LANGUAGE FOR DOCUMENTS</th>
+    <td>html</td>
+  </tr>
+</div>
+</table>
+    <h1>My GIS 3410 Web Mapping class online webpage contains a Body</h1>
+    <p>This houses my titles, paragraphs and headings which promote order, communication and clarity.</p>
+    <h3>My GIS 3410 online webpage also contains HTML</h3>
+    <p>This standard markup language for documents is designed to display my web browser content the way I want to display it.</p>  
+    <a href="https://uwaterloo.ca/arts-computing-newsletter/sites/ca.arts-computing-newsletter/files/styles/wide-body-750px-wide/public/uploads/images/html-vs-css-difference-funny-min.png?itok=iASv-Ysz" alt="HTML All Dressed Up" target="_blank">Program in HTML!</a> 
+    <h4>HTML Cool Image</h4>
+  <h1>More Than One Color</h1>
+  <div style="background-color:gray;">
+    <h2>Boring Background</h2>
+    <p>Use Cascading Style Sheets For A Change!</p>
+    <p>CSS Lets Me Change Colors Easily.</p>
+  </div>
+  <div style="background-color:orange;">
+    <h2>Orange Background</h2>
+    <p>Which is the better background?</p>
+    <p>Orange or Grey?</p>
+  </div>
+  <div style="background-color:purple;">
+    <h2>Purple Background</h2>
+    <p>Very Nice!</p>
+  </div>
+  <p>Add JFS CSS = styles, div, attributes, color, font</p>
+ </body>
+</html>
