@@ -6,7 +6,7 @@
     table, th, td {
       border: 2px cyan;
     }
-div_ctr1 {background-color: #04AA6D;} /* Green */ 
+    div_ctr1 {background-color: #04AA6D;} /* Green */ 
     <style type="text/css">
     body {width: 100%;}
     #container {
@@ -96,14 +96,16 @@ div_ctr1 {background-color: #04AA6D;} /* Green */
       $("#clicktoreveal1").click(function() {
         // run function when user clicks button
         $("#div_ctr1").html("Table Components");
+           $("img").toggle(); 
       });
  
       // initiate function after clicktoreveal2 clicked
       $("#clicktoreveal2").click(function() {
         // run function when user clicks button
         $("#div_ctr2").html("Languages");
-      });
-     });
+
+       });
+   });
   </script>
 </head>
 <body>
@@ -140,7 +142,6 @@ function displayResult() {
   <table id = "TableParts">
     <tr>
       <td><div id="div_ctr1"><button id="clicktoreveal1">Click to reveal...</button></div></td>
-        <button class="div_ctr1">Green</button>
       <th>BODY</th>
       <td>Title</td>
       <td>Header</td>
@@ -148,7 +149,6 @@ function displayResult() {
     </tr>
     <tr>
       <td><div id="div_ctr2"><button id="clicktoreveal2">Click to reveal...</button></div></td>
-        <button class="div_ctr2">#Blue</button>
       <th>STANDARD MARKUP LANGUAGE FOR DOCUMENTS</th>
       <td>html</td>
     </tr>
