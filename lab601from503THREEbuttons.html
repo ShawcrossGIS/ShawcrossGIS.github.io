@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Jeremy's Lab6</title>
+  <style>
+table, th, td {
+  border: 1px solid black;
+}
+    <style type="text/css">
+    body {width: 100%;}
+    .div_ctr1 {background-color: #04AA6D;} /* Green */ 
+    #container {
+      width: 100%;
+      text-align: left;
+      margin: 0px auto;
+      padding: 5px;
+    }
+    #jfsphoto {
+      background-color: blue;
+      margin-left: auto;
+      margin-right: 0;
+      float: left;
+      width: auto;
+    }
+    #myphoto {
+      height: auto;
+      width: 150px;
+      border: 2px black;
+      border-radius: 60%;
+      padding: block;
+      margin: auto;
+    }
+    .caption {
+      font-size: 15px;
+      font-family: times;
+      text-align: center;
+    }
+    p, td, li {
+      font-size: 10px;
+      font-family: georgia;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: tahoma;
+      background-color: #d8d8d8;
+    }
+    a {text-decoration: none;}
+    a:link {background-color: #fa94af;
+    a:visited {background-color: #fe2f08;}
+    a:hover {background-color: #425fb1;}
+    #Languages {
+      background-color: #00cc99;
+    }
+    #Locution {
+      background-color: #00cc99;
+    }
+    #Location {
+      background-color: #00cc99;
+    }
+  <style type="text/css">
+    body (
+    padding: 5px;)
+  h2 (
+    font - family: Georgia, Times, serif;
+    font - size: 100%;
+    text - shadow: 2px 3px 4px #666666;
+    padding-top: 6px;)
+  .jfsDiv { 
+  border: 4px outset yellow;
+  background-color: red;
+  text-align: center;
+}
+  .jfsDiv2 { 
+  border: 8px outset yellow;
+  background-color: #FF474C;
+  text-align: center;
+}
+    .jfsDiv3 { 
+  border: 6px outset black;
+  background-color: red;
+  text-align: left;
+}
+      .jfsDiv4 { 
+  border: 14px outset black;
+  background-color: green;
+  text-align: left;
+}
+  div {
+  border: 2px solid black;
+  margin-top: 86px;
+  margin-bottom: 50px;
+  margin-right: 25px;
+  margin-left: 50px;
+  background-color: lightblue;
+    }
+  </style>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+  <script>
+    $(document).ready(function(){
+      // initiate function after clicktoreveal1 clicked
+      $("#clicktoreveal1").click(function() {
+        // run function when user clicks button
+        $("#div_ctr1").html("Languages"); 
+    });
+ 
+      // initiate function after clicktoreveal2 clicked
+      $("#clicktoreveal2").click(function() {
+        // quick description
+        $("#div_ctr2").html("Locution");
+    });
+
+      // initiate function after clicktoreveal2 clicked
+      $("#clicktoreveal3").click(function() {
+        // run function when user clicks button
+        $("#div_ctr3").html("Location");
+    });
+      
+  });
+  </script>
+</head>
+<body>
+  <h2 id="jfsDiv4">Working For Spatial Awareness!</h2>
+<script>
+function displayResult() {
+  document.jfsDiv4.innerHTML = "I think I've learned something";
+}
+</script>
+  <div class="jfsDiv4"> 
+    <h2>Familiarizing with HTTP & CSS</h2>
+    <p>Jeremy's HTML and CSS Webpage!</p>
+    <p>Green background with gray border or...?</p>
+  </div>
+  <div class="jfsDiv3"> 
+    <h4>Does this DIV pop?</h4>
+    <p>Jeremy's HTML and CSS Webpage!</p>
+  </div>
+  <p> YAY PHOTO!</p>
+    <picture>
+    <div id = "jfsphoto">
+      <p><img src="https://i.imgur.com/I8BHmoV.png" alt="Cool Programmer" width="200" height="267" />
+    </picture>
+    <p><cite>created by author</cite></p>
+  <div class="jfsDiv">
+    <p> WOW! Look at this picture of me!</p>
+  </div>
+  <div>
+    <p> Wow! look at this color!</p>
+    <h2>Can you find 3 div on this page?</h2>
+  <div class="jfsDiv2">
+  
+      <table style="width:100%">
+  <table id = "TableParts">
+  <tr>
+    <td><div id="div_ctr1"><button id="clicktoreveal1">Click to reveal...</button></div></td>
+    <th>HTML</td>
+    <th>CSS</td>
+    <th>JAVASCRIPT</td>
+  </tr>
+  <tr>
+    <td><div id="div_ctr2"><button id="clicktoreveal2">Click to reveal...</button></div></td>
+    <td>STANDARD MARKUP LANGUAGE FOR DOCUMENTS</th>
+    <td>STYLE SHEET LANGUAGE</th>
+    <td>ENGINE THAT EXECUTES USER CODE</th>
+  </tr>
+  <tr>
+    <td><div id="div_ctr3"><button id="clicktoreveal3">Click to reveal...</button></div></td>
+    <td>Table Component</td>
+    <td>Style</td>
+    <td>Script</td>
+  </tr>
+</table>
+
+<p>To understand the example better, we have added borders to the table.</p>
+
+  </div>
+  <div style="background-color:#f9d62e;">
+    <h1>My GIS 3410 Web Mapping class online webpage contains a Body</h1>
+    <p>This houses my titles, paragraphs and headings which promote order, communication and clarity.</p>
+    <h3>My GIS 3410 online webpage also contains HTML</h3>
+    <p>This standard markup language for documents is designed to display my web browser content the way I want to display it.</p>  
+    <a href="https://uwaterloo.ca/arts-computing-newsletter/sites/ca.arts-computing-newsletter/files/styles/wide-body-750px-wide/public/uploads/images/html-vs-css-difference-funny-min.png?itok=iASv-Ysz" alt="HTML All Dressed Up" target="_blank">Program in HTML!</a> 
+    <h4>HTML Cool Image</h4>
+  <h1>More Than One Color</h1>
+  <div style="background-color:gray;">
+    <h2>Boring Background</h2>
+    <p>Use Cascading Style Sheets For A Change!</p>
+    <p>CSS Lets Me Change Colors Easily.</p>
+  </div>
+  <div style="background-color:orange;">
+    <h2>Orange Background</h2>
+    <p>Which is the better background?</p>
+    <p>Orange or Grey?</p>
+  </div>
+  <div style="background-color:purple;">
+    <h2>Purple Background</h2>
+    <p>Very Nice!</p>
+  </div>
+  <p>Practice Makes Perfect</p>
+ </body>
+</html>
