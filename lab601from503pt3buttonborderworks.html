@@ -47,11 +47,15 @@ table, th, td {
     a:link {background-color: #fa94af;
     a:visited {background-color: #fe2f08;}
     a:hover {background-color: #425fb1;}
-    #Table Components {
+    #Languages {
       background-color: #00cc99;
     }
-    #Languages {
+    #Locution {
       background-color: #00ffff;
+    }
+    #Location {
+      background-color: #00cc99;
+    }
   <style type="text/css">
     body (
     padding: 5px;)
@@ -103,7 +107,7 @@ table, th, td {
       // initiate function after clicktoreveal2 clicked
       $("#clicktoreveal2").click(function() {
         // run function when user clicks button
-        $("#div_ctr2").html("Table Components");
+        $("#div_ctr2").html("Locution");
 
       });
 
@@ -111,6 +115,7 @@ table, th, td {
       $("#clicktoreveal3").click(function() {
         // run function when user clicks button
         $("#div_ctr3").html("Location");
+        
       });
       
    });
@@ -148,7 +153,7 @@ function displayResult() {
   
 <table style="width:100%">
 <table style="width:100%">
-  <table id = "TableParts">
+  <table id = "Languages">
   <tr>
     <td><div id="div_ctr1"><button id="clicktoreveal2">Click to reveal...</button></div></td>
     <td>HTML</td>
