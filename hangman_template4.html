@@ -41,14 +41,20 @@
                   // check if the game has been won or lost
                   if (gameWon != true && gameLost != true) {
                     // erase the info box
+                    $("#info").text("");
 
                 
                     // use text to get the letter that was clicked on
-
+                    letter = $(this).text();
+                    console.log("clicked on: ", letter)
 
                     // make a line through the letter
+                    // OFKPOdfSzrM video at 28:32
+                    $(this).css("text-decoration", "line-through");
+                    
 
-                    // if the letter has already been clicked on, 
+                    // if the letter has already been clicked on,
+                    letter = $(this).text()
                     // let the user know it's already been tried
                     if (triedLetters.includes(letter)) {
 
