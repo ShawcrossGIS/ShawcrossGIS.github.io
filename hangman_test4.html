@@ -19,16 +19,16 @@
               // word =  "y o u r w o r d";
               // I will make mine something different > how about...clandestine
               // jfs: change word
-              // jfs: change blank space amount from 8 to 12 spaces = "- - - - - - - - - - - -";
+              // jfs: change blank space amount from 8 to 11 spaces = "- - - - - - - - - - - -";
               word =  "c l a n d e s t i n e";
-              blank = "- - - - - - - - - - - -";
+              blank = "- - - - - - - - - - -";
               $("#word").text(blank);
 
               // this is the list of letters that have been tried
               triedLetters = "";
 
               // this is the number of tries left
-              tries = 12;
+              tries = 11;
               $("#guesses").text("Guesses left: "+tries);
 
               // boolean (true / false variable) to track if game has been won or lost
@@ -77,7 +77,6 @@
 
                     
                     // otherwise, put a line through it and
-                      
                     // add it to the found letters
                     // and check if the player won or lost
                     } else {
@@ -123,9 +122,9 @@
   </head>
   <body>
      <h1>Let's play Hangman!</h1>
-     <div id="guesses">Guesses left: 12</div>
+     <div id="guesses">Guesses remaining: 11</div>
      <div id="info"></div>
-     <div id="word">- - - - - - - -</div>
+     <div id="word">- - - - - - - - - - -</div>
      <div id="alphabet">
        <p>Click to make a guess!</p>
        <span class="letter" id="a">a</span>
