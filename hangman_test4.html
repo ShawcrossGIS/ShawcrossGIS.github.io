@@ -68,13 +68,11 @@
                       tries = tries - 1;
                       $("#guesses").text("Guesses, remaining: " + tries)
 
-
                       // are they out of tries? then they lost!
                       if (tries < 1) {
                         gameLost = true;
                         $("#info").text("Sorry, you are out of guesses. You LOSE!")
                       }
-
                     
                     // otherwise, put a line through it and
                     // add it to the found letters
@@ -125,7 +123,7 @@
      <div id="guesses">Guesses remaining: 11</div>
      <div id="info"></div>
      <div id="word">- - - - - - - - - - -</div>
-     <div id="alphabet">
+     <div id="alphabet"></div>
        <p>Click to make a guess!</p>
        <span class="letter" id="a">a</span>
        <span class="letter" id="b">b</span>
