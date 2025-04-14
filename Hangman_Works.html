@@ -37,6 +37,8 @@
                    
               // when a user clicks on a letter... this is where everything happens!
               $(".letter").click( function() {
+                $("#letter").html("Languages");
+                  $("#letter").fadeToggle("10000");
 
                   // check if the game has been won or lost
                   if (gameWon != true && gameLost != true) {
