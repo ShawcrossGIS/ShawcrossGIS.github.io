@@ -49,7 +49,8 @@
                     console.log("clicked on: ", letter)
 
                     // make a line through the letter
-                    $(this).css("text-decoration", "line-through");
+                    $(this).fadeToggle("12000");
+                    
                     // OFKPOdfSzrM video at 28:32
                     
                     
@@ -59,7 +60,6 @@
                     // let the user know it's already been tried
                     if (triedLetters.includes(letter)) {
                       $("#info").text("Letter '" + letter + " ' already tried.");
-                        $(".word").fadeToggle("12000");
 
                     // if the letter isn't in the word, reduce
                     // the number of tries and check if they lost
