@@ -66,7 +66,7 @@
 
                       // reduce the number of remaining tries by 1
                       tries = tries - 1;
-                      $("#guesses").text("Guesses, remaining: " + tries)
+                      $("#guesses").text("Guesses, left: " + tries)
 
                       // are they out of tries? then they lost!
                       if (tries < 1) {
@@ -120,7 +120,7 @@
   </head>
   <body>
      <h1>Let's play Hangman!</h1>
-     <div id="guesses">Guesses remaining: 11</div>
+     <div id="guesses">Guesses left: 11</div>
      <div id="info"></div>
      <div id="word">- - - - - - - - - - -</div>
      <div id="alphabet"></div>
