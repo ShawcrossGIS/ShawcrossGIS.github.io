@@ -168,6 +168,11 @@ table, th, td {
     [51.51, -0.047]
 ]).addTo(map);
   
+  // shortcut for popups
+  marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+circle.bindPopup("I am a circle.");
+polygon.bindPopup("I am a polygon.");
+  
 function displayResult() {
   document.jfsDiv4.innerHTML = "I think I've learned something";
 }
