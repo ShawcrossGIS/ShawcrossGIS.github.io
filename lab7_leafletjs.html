@@ -15,7 +15,7 @@ table, th, td {
       margin: 0px auto;
       padding: 5px;
     }
-    #map { height: 180px; 
+    #map { height: 200px; 
     }
     #jfsphoto {
       background-color: blue;
@@ -140,19 +140,34 @@ table, th, td {
   
   <h2 id="jfsDiv4">Working For Spatial Awareness!</h2>
 <script>
+  
+  //create map with Center at London
     var map = L.map('map').setView([51.505, -0.09], 13);
   
+  //add Tile Layer
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
+  
+  // add a marker
   var marker = L.marker([51.5, -0.09]).addTo(map);
+  
+  // add a circle
   var circle = L.circle([51.508, -0.11], {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.5,
     radius: 500
 }).addTo(map);
+
+  // Add a polygon
+  var polygon = L.polygon([
+    [51.509, -0.08],
+    [51.503, -0.06],
+    [51.51, -0.047]
+]).addTo(map);
+  
 function displayResult() {
   document.jfsDiv4.innerHTML = "I think I've learned something";
 }
