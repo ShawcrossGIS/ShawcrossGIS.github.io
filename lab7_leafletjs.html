@@ -138,8 +138,6 @@ table, th, td {
   
   <h2 id="jfsDiv4">Working For Spatial Awareness!</h2>
 <script>
-  // put div code in where I want map to be
-  <div id="map"></div>
   
   //create map with Center at London
     var map = L.map('map').setView([51.505, -0.09], 13);
@@ -178,6 +176,13 @@ polygon.bindPopup("I am a polygon.");
     .setLatLng([51.513, -0.09])
     .setContent("I am a standalone popup.")
     .openOn(map);
+
+  // EVENTS ???
+  function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+
+map.on('click', onMapClick);
   
 function displayResult() {
   document.jfsDiv4.innerHTML = "I think I've learned something";
@@ -227,6 +232,8 @@ function displayResult() {
     <td>Script</td>
   </tr>
 </table>
+  // put div code in where I want map to be
+  <div id="map"></div>
 
 <p>To understand the example better, we have added borders to the table.</p>
 
