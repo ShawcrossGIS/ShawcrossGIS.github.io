@@ -152,10 +152,10 @@ table, th, td {
 }).addTo(map);
   
   // add a marker
-  var marker = L.marker([57.138611, 4.67]).addTo(map);
+  var marker = L.marker([57.1385522, -4.6682962]).addTo(map);
   
   // add a circle
-  var circle = L.circle([57.138611, 4.67], {
+  var circle = L.circle([57.1385522, -4.6682962], {
     color: 'red',
     fillColor: '#f03',
     fillOpacity: 0.5,
@@ -178,7 +178,7 @@ polygon.bindPopup("I am a polygon.");
 
   // use Pop-Ups as Layers
   var popup = L.popup()
-    .setLatLng([57.138611, 4.67])
+    .setLatLng([57.1385522, -4.6682962])
     .setContent("I am a standalone popup.")
     .openOn(map);
 
