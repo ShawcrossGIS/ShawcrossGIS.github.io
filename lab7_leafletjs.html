@@ -143,7 +143,7 @@ table, th, td {
   
   // CHANGE: create map with Center at London
   // to: create map with border around Loch Ness
-    var map = L.map('map').setView([57.138611, 4.67], 10);
+    var map = L.map('map').setView([57.1385522, -4.6682962], 10);
   
   //add Tile Layer
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -165,10 +165,10 @@ table, th, td {
   // Add a polygon
   //Loch Ness poly = NW,SW,SE,NE
   var polygon = L.polygon([
-    [57.3964, 4.2975],
-    [57.1453, 4.6867],
-    [57.1308, 4.6531],
-    [57.3964, 4.2975]
+    [57.4203674, -4.3581830],
+    [57.1452955, -4.6867753],
+    [57.1310713, -4.6530523],
+    [57.3966706, -4.2977473]
 ]).addTo(map);
   
   // shortcut for popups
