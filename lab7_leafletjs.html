@@ -145,6 +145,286 @@ table, th, td {
   // CHANGE: create map with Center at London
   // to: create map with border around Loch Ness
   // Note: the lower the zoom # the further out the zoom !!!!!!!!!!!!!!!!!!!
+  // make var map 20 from 16 to view more zoomed out
+    var map = L.map('map').setView([57.1385522, -4.6682962], 9);
+  
+  //add Tile Layer
+  L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+  
+  // add a marker
+  var marker = L.marker([57.1385522, -4.6682962]).addTo(map);
+  
+  // add a circle
+  var circle = L.circle([57.1385522, -4.6682962], {
+    color: 'green',
+    fillColor: '#00ffcc',
+    fillOpacity: 0.5,
+    radius: 36350
+}).addTo(map);
+
+  // Add a polygon
+  //Loch Ness poly = NW,SW,SE,NE
+  var polygon = L.polygon([
+    [57.4203674, -4.3581830],
+    [57.1452955, -4.6867753],
+    [57.1310713, -4.6530523],
+    [57.3966706, -4.2977473]
+]).addTo(map);
+  
+  // shortcut for popups
+marker.bindPopup("<b>Hello Geography Students!</b><br>I am a popup @ the Southmost Extent of Loch Ness.").openPopup();
+circle.bindPopup("I am a circle whose radius is the length of Loch Ness.");
+polygon.bindPopup("I am a polygon surrounding the extents of Loch Ness.");
+
+  // use Pop-Ups as Layers
+  var popup = L.popup()
+    .setLatLng([57.1385522, -4.6682962])
+    .setContent("I am a standalone popup @ the radius point.")
+    .openOn(map);
+
+  // EVENTS ???
+  function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+}
+  map.on('click', onMapClick);
+
+  // use Pop-Up INSTEAD of Alert
+var popup = L.popup();
+
+function onMapClick(e) {
+    popup
+        .setLatLng(e.latlng)
+        .setContent("You clicked the map at " + e.latlng.toString())
+        .openOn(map);
+}
+map.on('click', onMapClick);
+  
+function displayResult() {
+  document.jfsDiv4.innerHTML = "I think I've learned something";
+}
+</script>
+  <div class="jfsDiv4"> 
+    <h2>Familiarizing with HTTP & CSS</h2>
+    <p>Jeremy's HTML and CSS Webpage!</p>
+    <p>Green background with gray border or...?</p>
+  </div>
+  <div class="jfsDiv3"> 
+    <h4>Does this DIV pop?</h4>
+    <p>Jeremy's HTML and CSS Webpage!</p>
+  </div>
+  <p> YAY PHOTO!</p>
+    <picture>
+    <div id = "jfsphoto">
+      <p><img src="https://i.imgur.com/I8BHmoV.png" alt="Cool Programmer" width="200" height="267" />
+    </picture>
+    <p><cite>created by author</cite></p>
+  <div class="jfsDiv">
+    <p> WOW! Look at this picture of me!</p>
+  </div>
+  <div>
+    <p> Wow! look at this color!</p>
+    <h2>Can you find 3 div on this page?</h2>
+  <div class="jfsDiv2">
+  
+      <table style="width:100%">
+  <table id = "TableParts">
+  <tr>
+    <td><div id="div_ctr1"><button id="clicktoreveal1">Click to reveal...</button></div></td>
+    <th>HTML</td>
+    <th>CSS</td>
+    <th>JAVASCRIPT</td>
+  </tr>
+  <tr>
+    <td><div id="div_ctr2"><button id="clicktoreveal2">Click to reveal...</button></div></td>
+    <td>STANDARD MARKUP LANGUAGE FOR DOCUMENTS</th>
+    <td>STYLE SHEET LANGUAGE</th>
+    <td>ENGINE THAT EXECUTES USER CODE</th>
+  </tr>
+  <tr>
+    <td><div id="div_ctr3"><button id="clicktoreveal3">Click to reveal...</button></div></td>
+    <td>Table Component</td>
+    <td>Style</td>
+    <td>Script</td>
+  </tr>
+</table>
+
+<p>To understand the example better, we have added borders to the table.</p>
+
+  </div>
+  <div style="background-color:#f9d62e;">
+    <h1>My GIS 3410 Web Mapping class online webpage contains a Body</h1>
+    <p>This houses my titles, paragraphs and headings which promote order, communication and clarity.</p>
+    <h3>My GIS 3410 online webpage also contains HTML</h3>
+    <p>This standard markup language for documents is designed to display my web browser content the way I want to display it.</p>  
+    <a href="https://uwaterloo.ca/arts-computing-newsletter/sites/ca.arts-computing-newsletter/files/styles/wide-body-750px-wide/public/uploads/images/html-vs-css-difference-funny-min.png?itok=iASv-Ysz" alt="HTML All Dressed Up" target="_blank">Program in HTML!</a> 
+    <h4>HTML Cool Image</h4>
+  <h1>More Than One Color</h1>
+  <div style="background-color:gray;">
+    <h2>Boring Background</h2>
+    <p>Use Cascading Style Sheets For A Change!</p>
+    <p>CSS Lets Me Change Colors Easily.</p>
+  </div>
+  <div style="background-color:orange;">
+    <h2>Orange Background</h2>
+    <p>Which is the better background?</p>
+    <p>Orange or Grey?</p>
+  </div>
+  <div style="background-color:purple;">
+    <h2>Purple Background</h2>
+    <p>Very Nice!</p>
+  </div>
+  <p>Practice Makes Perfect</p>
+ </body>
+</html><!DOCTYPE html>
+<html>
+  <head>
+    <title> Jeremy's Leafletjs Lab 7</title>
+  <style>
+    #map { height: 600px; 
+}
+table, th, td {
+  border: 1px solid black;
+}
+    <style type="text/css">
+    body {width: 100%;}
+    .div_ctr1 {background-color: #04AA6D;} /* Green */ 
+    #container {
+      width: 100%;
+      text-align: left;
+      margin: 0px auto;
+      padding: 5px;
+    }
+    #jfsphoto {
+      background-color: blue;
+      margin-left: auto;
+      margin-right: 0;
+      float: left;
+      width: auto;
+    }
+    #myphoto {
+      height: auto;
+      width: 150px;
+      border: 2px black;
+      border-radius: 60%;
+      padding: block;
+      margin: auto;
+    }
+    .caption {
+      font-size: 15px;
+      font-family: times;
+      text-align: center;
+    }
+    p, td, li {
+      font-size: 10px;
+      font-family: georgia;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      font-family: tahoma;
+      background-color: #d8d8d8;
+    }
+    a {text-decoration: none;}
+    a:link {background-color: #fa94af;
+    a:visited {background-color: #fe2f08;}
+    a:hover {background-color: #425fb1;}
+    #Languages {
+      background-color: #00cc99;
+    }
+    #Locution {
+      background-color: #00cc99;
+    }
+    #Location {
+      background-color: #00cc99;
+    }
+  <style type="text/css">
+    body (
+    padding: 5px;)
+  h2 (
+    font - family: Georgia, Times, serif;
+    font - size: 100%;
+    text - shadow: 2px 3px 4px #666666;
+    padding-top: 6px;)
+  .jfsDiv { 
+  border: 4px outset yellow;
+  background-color: red;
+  text-align: center;
+}
+  .jfsDiv2 { 
+  border: 8px outset yellow;
+  background-color: #FF474C;
+  text-align: center;
+}
+    .jfsDiv3 { 
+  border: 6px outset black;
+  background-color: red;
+  text-align: left;
+}
+      .jfsDiv4 { 
+  border: 14px outset black;
+  background-color: green;
+  text-align: left;
+}
+  div {
+  border: 2px solid black;
+  margin-top: 86px;
+  margin-bottom: 50px;
+  margin-right: 25px;
+  margin-left: 50px;
+  background-color: lightblue;
+    }
+
+  </style>
+ 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+  <script>
+    $(document).ready(function(){
+      // initiate function after clicktoreveal1 clicked
+      $("#clicktoreveal1").click(function() {
+        // run function when user clicks button
+        $("#div_ctr1").html("Languages");
+          $("#div_ctr1").fadeToggle(10000);
+            $("p").text("Hope You Read That!");
+    });
+ 
+      // initiate function after clicktoreveal2 clicked
+      $("#clicktoreveal2").click(function() {
+        // quick description
+        $("#div_ctr2").html("Locution");
+          $("#div_ctr2").fadeToggle("11000");
+            $("p").text("I Think I Missed That!");
+    });
+
+      // initiate function after clicktoreveal2 clicked
+      $("#clicktoreveal3").click(function() {
+        // run function when user clicks button
+        $("#div_ctr3").html("Location");
+          $("#div_ctr3").fadeToggle(12000);
+            $("p").text("The River Keeps On Flowing!");
+    });
+      
+  });
+  </script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+  
+  <div id="map"></div>
+  
+</head>
+<body>
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+  
+  <h2 id="jfsDiv4">Adding a map centered on Loch Ness!</h2>
+<script>
+  
+  // CHANGE: create map with Center at London
+  // to: create map with border around Loch Ness
+  // Note: the lower the zoom # the further out the zoom !!!!!!!!!!!!!!!!!!!
   // make var map 9 from 13 to view Loch Ness within the extents of the zoom!
     var map = L.map('map').setView([57.1385522, -4.6682962], 9);
   
