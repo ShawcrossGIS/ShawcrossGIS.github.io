@@ -3,6 +3,8 @@
   <head>
     <title> Jeremy's Leafletjs Lab 7</title>
   <style>
+    #map { height: 600px; 
+}
 table, th, td {
   border: 1px solid black;
 }
@@ -92,8 +94,7 @@ table, th, td {
   margin-left: 50px;
   background-color: lightblue;
     }
-    #map { height: 400px; 
-}
+
   </style>
  
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
@@ -111,7 +112,7 @@ table, th, td {
       $("#clicktoreveal2").click(function() {
         // quick description
         $("#div_ctr2").html("Locution");
-          $("#div_ctr2").fadeToggle("7000");
+          $("#div_ctr2").fadeToggle("11000");
             $("p").text("I Think I Missed That!");
     });
 
@@ -138,16 +139,18 @@ table, th, td {
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
   
-  <h2 id="jfsDiv4">Working For Spatial Awareness!</h2>
+  <h2 id="jfsDiv4">Adding a map centered on Loch Ness!</h2>
 <script>
   
   // CHANGE: create map with Center at London
   // to: create map with border around Loch Ness
-    var map = L.map('map').setView([57.1385522, -4.6682962], 10);
+  // Note: the lower the zoom # the further out the zoom !!!!!!!!!!!!!!!!!!!
+  // make var map 9 from 13 to view Loch Ness within the extents of the zoom!
+    var map = L.map('map').setView([57.1385522, -4.6682962], 9);
   
   //add Tile Layer
   L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
+    maxZoom: 18,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
 }).addTo(map);
   
@@ -156,8 +159,8 @@ table, th, td {
   
   // add a circle
   var circle = L.circle([57.1385522, -4.6682962], {
-    color: 'red',
-    fillColor: '#f03',
+    color: 'green',
+    fillColor: '#00ffcc',
     fillOpacity: 0.5,
     radius: 36350
 }).addTo(map);
@@ -179,7 +182,7 @@ polygon.bindPopup("I am a polygon surrounding the extents of Loch Ness.");
   // use Pop-Ups as Layers
   var popup = L.popup()
     .setLatLng([57.1385522, -4.6682962])
-    .setContent("I am a standalone popup.")
+    .setContent("I am a standalone popup @ the radius point.")
     .openOn(map);
 
   // EVENTS ???
