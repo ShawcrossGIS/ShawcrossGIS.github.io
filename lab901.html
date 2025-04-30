@@ -85,7 +85,7 @@
 
 		//Part 2 Changing L.geoJSON code for style1 function functionality
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
-       acsDenver2021Layer = L.geoJSON(data,  
+       		acsDenver2021Layer = L.geoJSON(data,  
 					   { style: style1 }).addTo(map); 
  	 	     map.panTo(acsDenver2021Layer.getBounds().getCenter());
 		layerControl.addOverlay(acsDenver2021Layer, "Census 2021"); 
