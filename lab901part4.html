@@ -20,11 +20,11 @@
 		
 		#map { width:100%; height: 70%; }
 		
-		h1 { color: #3293a8;
-		     font-family: "Garamond", serif;
-		     font-size: 20px;
+		h1 { color: ; #a83293;
+		     font-family: "Alexandria", serif;
+		     font-size: 21px;
 		    }
-		h2 { color: #a83293;
+		h2 { color: #4732a8;
 		     font-family: "Astralaga", serif;
 		     font-size: 17px;
 		    }
@@ -52,7 +52,7 @@
 	$(document).ready(function() {
 
 		// let's create our basemap! -- ##1 here
-		map = L.map('map').setView([0,0], 10); 
+		var map = L.map('map').setView([0,0], 10); 
 		
 		// let's add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
 		var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
