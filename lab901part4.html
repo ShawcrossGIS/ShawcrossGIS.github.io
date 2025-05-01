@@ -89,10 +89,11 @@
  	 	     });
 
 		// Part 2 Fill in style1 function with this code
-		// duplicate line of code at 107 108 causes map to disappear 
-		// Use JSFiddle for code arrangement help 
-		// delete duplicate line of code at 107 108
-		// now map reappears in CHOROPLETH
+		// a.duplicate line of code at 107 108 causes map to disappear 
+		// b.Use JSFiddle for code arrangement help 
+		// c.delete duplicate line of code at 107 108
+		// d.now map reappears in CHOROPLETH
+		// d = featur... is the FEATURE SELECTION !!!
 		function style1(feature) { 
  	 	 	   d = feature.properties.PCT_POVERTY;  	 	
 		      answer = d > 30 ? '#800026' :   	 	 	 	
@@ -113,6 +114,7 @@
  	 	} 	 	 	 	
 		
 		// Added the Denver ACS data -- ##4 here
+		// Try and think that I can use the same GeoJSON but just change the GoTo on it to = 
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
 			//convert geoJSON file into layer for my map
 			acsDenver2021Layer = L.geoJSON(data).addTo(map);
