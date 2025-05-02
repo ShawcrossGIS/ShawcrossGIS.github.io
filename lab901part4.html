@@ -86,7 +86,7 @@
        		acsDenver2021Layer = L.geoJSON(data,  
 					   { style: style1 }).addTo(map); 
  	 	     map.panTo(acsDenver2021Layer.getBounds().getCenter());
-		layerControl.addOverlay(acsDenver2021Layer, "Age 18 & Younger Per District"); 
+		layerControl.addOverlay(acsDenver2021Layer, "Census 2021"); 
  	 	     });
 
 		// Part 2 Fill in style1 function with this code
@@ -135,7 +135,7 @@
 			acsDenver2021Layer = L.geoJSON(data,
 					     {style:style1,
 					     onEachFeature: function(feature, layer) {
-						     layer.bindPopup("% Pop. Age 18 & Under: " + feature.properties.PCT_AGELESS18 + "%");
+						     layer.bindPopup("Age 18 & Younger Per District" + feature.properties.PCT_AGELESS18 + "%");
 					     }}).addTo(map);
 
 			// move the map to the area of the data
