@@ -95,18 +95,22 @@
 		// c.delete duplicate line of code at 107 108
 		// d.now map reappears in CHOROPLETH
 		// d = featur... is the FEATURE SELECTION !!!
-		// !!!!!!!!!! NEW d will = Percent Age Less Than 18!!!!!!!!!!!!!!
+		// !!!!!!!!!! NEW d will = Percent Age Less Than 18 = shown as PCT_AGELESS18 !!!!!!!!!!!!!!
 		// use: #f1eef6 #d4b9da #c994c7 #df65b0 #e7298a #ce1256 #91003f light to dark(left to right)
+		// USE: https://jsonformatter.org/ and format the: ODC_POP_CENSUS2010NBRHD_A_7153170524726095520.geojson in jfs...
+		// ...week 12 GeoJSON_Download folder then... 
+		// ...scroll for choosen attribute name in this case...
+		// ...feature collection is called PCT_AGELESS18
+		// CHANGE - Choosing new 5 Color Hex Gradient using #810f7c #8856a7 #8c96c6 #b3cde3 #edf8fb (Dark to Light to  matchDr.Ma Choro validity)
+
 		function style1(feature) { 
  	 	 	   d = feature.properties.PCT_AGELESS18;  	 	
-		      answer = d > 55 ? '#f1eef6' :   	 	 	 	
-		      d > 45 ? '#d4b9da ' :   	 	 	 	
-		d > 35 ? '#c994c7' :   	 	 	 
-	       d > 25 ? '#df65b0' :  
- 	 	 	              d > 15 ? '#e7298a' :   	 	 	 	 	
-			         d > 5 ? '#ce1256' :   	 	 	 	 	
-			    d > 1 ? '#91003f': 
-			      			'#000000';  	 	 	
+		      answer = d > 55 ? '#810f7c' :   	 	 	 	
+		      d > 40 ? '#8856a7 ' :   	 	 	 	
+		d > 25 ? '#8c96c6' :   	 	 	 
+	       d > 10 ? '#b3cde3' :  
+ 	 	 	              d > 5 ? '#edf8fb' :   	 	 	 	 	 
+			      				  '#000000';  	 	 	
 				styleReturn = {
 	// NOTE: 
 	// fill color/weight etc... are for CSS location in
