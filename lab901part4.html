@@ -106,11 +106,11 @@
 		function style1(feature) { 
  	 	  d = feature.properties.PCT_AGELESS18;  	 	
 		  answer = d < 55 ? '#810f7c' :   	 	 	 	
-		    d <= 41.25 ? '#8856a7' :   	 	 	 	
-		    d <= 25.7 ? '#8c96c6' :   	 	 	 
-	            d <= 13.75 ? '#b3cde3' :  
- 	 	    d <= 5 ? '#edf8fb' :   	 	 	 	 	 
-		    d <= 0 ? '#000000' : 
+		    d >= 41.25 ? '#8856a7' :   	 	 	 	
+		    d >= 25.7 ? '#8c96c6' :   	 	 	 
+	            d >= 13.75 ? '#b3cde3' :  
+ 	 	    d >= 5 ? '#edf8fb' :   	 	 	 	 	 
+		    d >= 0 ? '#000000' : 
 			               '#000000';  	 	 	
 		  styleReturn = {
 	// NOTE: 
