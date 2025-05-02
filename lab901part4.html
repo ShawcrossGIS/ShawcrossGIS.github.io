@@ -80,7 +80,7 @@
 
 		// Is this the place for ACS??
 		// Add h2
-		// !!!Look here for to change the goto for Census data from Census 2021 to 2030!!!
+		// old/!!!Look here for to change the goto for Census data from Census 2021 to 2030!!!
 		// !!!!!!!!!! Part 2 Changing L.geoJSON code for style1 function functionality
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
        		acsDenver2021Layer = L.geoJSON(data,  
@@ -106,10 +106,10 @@
 		function style1(feature) { 
  	 	 	   d = feature.properties.PCT_AGELESS18;  	 	
 		      answer = d > 55 ? '#810f7c' :   	 	 	 	
-		      d > 40 ? '#8856a7 ' :   	 	 	 	
-		d > 25 ? '#8c96c6' :   	 	 	 
-	       d > 10 ? '#b3cde3' :  
- 	 	 	              d > 5 ? '#edf8fb' :   	 	 	 	 	 
+		      d > 41.25 ? '#8856a7 ' :   	 	 	 	
+		d > 25.7 ? '#8c96c6' :   	 	 	 
+	       d > 13.75 ? '#b3cde3' :  
+ 	 	 	              d = 0 ? '#edf8fb' :   	 	 	 	 	 
 			      				  '#000000';  	 	 	
 				styleReturn = {
 	// NOTE: 
