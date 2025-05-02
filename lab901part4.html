@@ -104,22 +104,25 @@
 		// CHANGE - Choosing new 5 Color Hex Gradient using #810f7c #8856a7 #8c96c6 #b3cde3 #edf8fb (Dark to Light to  matchDr.Ma Choro validity)
 
 		function style1(feature) { 
- 	 	 	   d = feature.properties.PCT_AGELESS18;  	 	
-		      answer = d > 55 ? '#810f7c' :   	 	 	 	
-		      d > 41.25 ? '#8856a7 ' :   	 	 	 	
-		d > 25.7 ? '#8c96c6' :   	 	 	 
-	       d > 13.75 ? '#b3cde3' :  
- 	 	 	              d = 0 ? '#edf8fb' :   	 	 	 	 	 
-			      				  '#edf8fb';  	 	 	
-				styleReturn = {
+ 	 	  d = feature.properties.PCT_AGELESS18;  	 	
+		  answer = d > 55 ? '#810f7c' :   	 	 	 	
+		    d > 41.25 ? '#8856a7 ' :   	 	 	 	
+		    d > 25.7 ? '#8c96c6' :   	 	 	 
+	            d > 13.75 ? '#b3cde3' :  
+ 	 	    d = 0 ? '#edf8fb' :   	 	 	 	 	 
+		    '#edf8fb';  	 	 	
+		  styleReturn = {
 	// NOTE: 
 	// fill color/weight etc... are for CSS location in
 	//see Part 2 Parameters just before Start of Part 3 Add a PopUp Value...
 	// jfs: Add or transplant CSS code below to line 39-41
-	fillColor : answer,  	 	 	 weight  : 3,  	 	 	 	
-			          opacity : 3,  	 	 	 	
-		color  	: '#808080',  	 	 	 	dashArray : '3',  	 	 	 	fillOpacity : 0.75 
- 	 	 	}; 
+		    fillColor : answer,  	 	 	
+                    weight  : 1,  	 	 	 	
+		    opacity : 3,  	 	 	 	
+		    color : 'white',  	 	 	 	
+		    dashArray : '3',  	 	 	 	
+		    fillOpacity : 0.75 
+ 	 	 }; 
  	 	 	return styleReturn; 
  	 	} 	 	 	 	
 		
