@@ -43,15 +43,16 @@
 
 <script>
 
-// make a new h2 and have it go to data below!!!!!!!!!!!!!!!!!!!!
-//!!!!! Make my own by changing each step and turn Dr. Ma's Script into '//' note form to preserve them !!!!!!!!
+// I have found the folly in noting line numbers in // notation in regards to future reference in a working doc !!!	
+// make a new h2 out of existing <p>?? WHY wouuld this be a helpful change?? and have it go to data below!!!!!!!!!!!!!!!!!!!!
+//!!!!! Make my own lab901 by duplicating and changing each step and take Dr. Ma's preserved Script for comparison with my working lab901part4.html working code !!!!!!!!
   // the document ready wraps our javascript
 	// to make sure that everything loads in the 
 	// right order
 	$(document).ready(function() {
 
 		// let's create our basemap! -- ##1 here
-		var map = L.map('map').setView([0,0], 10); 
+		 map = L.map('map').setView([0,0], 10); 
 		
 		// let's add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
 		var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
