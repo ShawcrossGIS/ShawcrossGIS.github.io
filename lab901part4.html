@@ -132,7 +132,11 @@
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
 			// !!!!!!!!!!!!!!!!!!!! This Code converts geoJSON file into layer for my map!!!!!!!!!!!!!!!!!!!!!!!!!
 			
-			acsDenver2021Layer = L.geoJSON(data).addTo(map);
+			acsDenver2021Layer = L.geoJSON(data,
+					     {style:style1,
+					     onEachFeature: function(feature, layer) {
+						     layer.bindPopup("% Pop. Age 18 & Under: " + feature.properties.PCT_AGELESS18 + "%");
+					     }}).addTo(map);
 
 			// move the map to the area of the data
 			// ask Dr. Ma about 'Object Oriented Programming' class creation
