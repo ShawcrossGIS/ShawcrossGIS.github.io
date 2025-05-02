@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.ie.css" />
+<![endif]-->
+ 
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+<style>
+#map {
+	width:960px;
+	height:500px;
+}
+</style>
+</head>
+ 
+<body>
+	<div id="map"></div>
+<script>
+window.onload = function () {
+ 	var map = L.map('map').setView([43.07573,-89.401047], 15);
+ 	
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+
+	L.marker([43.075695,-89.401052]).addTo(map)
+	        .bindPopup('<strong>Science Hall</strong><br>Where the GISC was born.')
+	        .openPopup();
+};
+</script>
+</body>
+</html>
