@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>JFS Lab10 Denver Population Age 18 & Under by District</title>
+	
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		
+		#map { width:100%; height: 70%; }
+		
+		h1 { color: ; #ce59b9;
+		     font-family: "Alexandria", serif;
+		     font-size: 21px;
+		    }
+		h2 { color: #4732a8;
+		     font-family: "Astralaga", serif;
+		     font-size: 17px;
+		    }
+		
+		p { font: serif 10px;
+		    color: #3293a8;
+		  }
+		
+		#header {
+			width: 100%;
+			margin: auto;
+			align: center;
+		}
+		
+		a { text-decoration: none; color: inherit; }
+
+		.legend {
+		  	line-height: 21px;
+		  	color: #555;
+			background-color: #98fb98;     
+			padding: 2px; 
+		} 
+		.legend i {     
+			width: 21px;     
+			height: 20px;     
+			float: left;     
+			margin-right: 8px;     
+			opacity: 0.8; }
+		}
+	</style>
+
+<script>
+
+// ABOVE css code - .legend ADDS THE CODE and .legend i ITERATES THE FUNCTION
+// I have found the folly in noting line numbers in // notation in regards to future reference in a working doc !!!	
+// make a new h2 out of existing <p>?? WHY wouuld this be a helpful change?? and have it go to data below!!!!!!!!!!!!!!!!!!!!
+//!!!!! Make my own lab901 by duplicating and changing each step and take Dr. Ma's preserved Script for comparison with my working lab901part4.html working code !!!!!!!!
+  // the document ready wraps our javascript
+	// to make sure that everything loads in the 
+	// right order
+	$(document).ready(function() {
+
+		// let's create our basemap! -- ##1 here
+		// Do Not Use var in front of map = L.map....
+		// If you do the CHOROPLETH disappears !!!!!!!
+		 map = L.map('map').setView([0,0], 10); 
+		
+		// let's add three sets of background tiles - one from OSM,  one from HOT OSM, and one from openTopoMap
+		var OSMTiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+		}).addTo(map);
+		var HOTOSMTiles = L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+    			attribution: '© OpenStreetMap contributors, Tiles style by Humanitarian OpenStreetMap Team hosted by OpenStreetMap France'});
+		var OpenTopoMap = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'});
+
+		// this is an object to keep track of our three basemaps -- ##2 here
+		var baseMaps = { "OpenStreetMap" : OSMTiles, 
+ 	 	 	      "Humanitarian OSM" : HOTOSMTiles, 
+              		      "OpenTopoMap" : OpenTopoMap }; 
+
+		// the control let's the user turn on / off layers -- ##3 here
+		
+		var layerControl = L.control.layers(baseMaps, null).addTo(map);
+
+		// Adding lab901.html GeoJSON file here above Denver ACS data #4
+		// Is this the place for ACS??
+		// Add h2
+		// old/!!!Look here for to change the goto for Census data from Census 2021 to 2030!!!
+		// !!!!!!!!!! Part 2 Changing L.geoJSON code for style1 function functionality
+		$.getJSON('./acs_denver_2021.geojson', function(data) {
+       		acsDenver2021Layer = L.geoJSON(data,  
+					   { style: style1 }).addTo(map); 
+ 	 	     map.panTo(acsDenver2021Layer.getBounds().getCenter());
+		layerControl.addOverlay(acsDenver2021Layer, "Age 18 & Younger Per District"); 
+ 	 	     });
+
+		// Part 2 Fill in style1 function with this code
+		// a.duplicate line of code at 107 108 causes map to disappear 
+		// b.Use JSFiddle for code arrangement help 
+		// c.delete duplicate line of code at 107 108
+		// d.now map reappears in CHOROPLETH
+		// d = featur... is the FEATURE SELECTION !!!
+		// !!!!!!!!!! NEW d will = Percent Age Less Than 18 = shown as PCT_AGELESS18 !!!!!!!!!!!!!!
+		// use: #f1eef6(veryWhite) #d4b9da #c994c7 #df65b0 #e7298a #ce1256 #91003f(dark maroon) light to dark(left to right)
+		// USE: https://jsonformatter.org/ and format the: ODC_POP_CENSUS2010NBRHD_A_7153170524726095520.geojson in jfs...
+		// ...week 12 GeoJSON_Download folder then... 
+		// ...scroll for choosen attribute name in this case...
+		// ...feature collection is called PCT_AGELESS18
+		// CHANGE - Choosing new 5 Color Hex Gradient using #810f7c #8856a7 #8c96c6 #b3cde3 #edf8fb #ffffff (Dark to Light to  matchDr.Ma Choro validity)
+
+		function style1(feature) { 
+ 	 	  d = feature.properties.PCT_AGELESS18;  	 	
+		  answer = d > 40 ? '#810f7c' :   	 	 	 	
+		    d >= 25 ? '#8856a7' :   	 	 	 	
+		    d >= 10 ? '#8c96c6' :   	 	 	 
+	            d >= 5 ? '#b3cde3' :  
+ 	 	    d >= 0 ? '#edf8fb' :   	 	 	 	 	 
+			               '#ffffff';  	 	 	
+		  styleReturn = {
+	// NOTE: 
+	// fill color/weight etc... are for CSS location in
+	//see Part 2 Parameters just before Start of Part 3 Add a PopUp Value...
+	// jfs: Add or transplant CSS code below to line 39-41
+	// CHANGE opacity to 0.8 from submitted opacity 2.0 	   
+		    fillColor : answer,  	 	 	
+                    weight  : 3,  	 	 	 	
+		    opacity : 0.8,  	 	 	 	
+		    color : 'green',  	 	 	 	
+		    dashArray : '3',  	 	 	 	
+		    fillOpacity : 0.6 
+ 	 	 }; 
+ 	 	 return styleReturn; 
+ 	       }
+		
+		
+		// Added the Denver ACS data -- ##4 here
+		// Try and think that I can use the same GeoJSON but just change the GoTo on it to = 
+		$.getJSON('./acs_denver_2021.geojson', function(data) {
+			// !!!!!!!!!!!!!!!!!!!! This Code converts geoJSON file into layer for my map!!!!!!!!!!!!!!!!!!!!!!!!!
+			
+			acsDenver2021Layer = L.geoJSON(data,
+					     {style:style1,
+					     onEachFeature: function(feature, layer) {
+						     layer.bindPopup("Age 18 & Younger Per District: " + feature.properties.PCT_AGELESS18 + "%");
+					     }}).addTo(map);
+
+			// move the map to the area of the data
+			// ask Dr. Ma about 'Object Oriented Programming' class creation
+			map.panTo(acsDenver2021Layer.getBounds().getCenter());
+
+			//add the layer to the layercontrol
+			layerControl.addOverlay(acsDenver2021Layer, "Census 2021");
+		});
+
+		// let's try to add some remote DRCOG data
+		$.getJSON('https://services1.arcgis.com/zdB7qR0BtYrg0Xpl/arcgis/rest/services/ODC_TRANS_RTDPARKNRIDE_P/FeatureServer/280/query?outFields=*&where=1%3D1&f=geojson', function(data) {
+			newLayer = L.geoJSON(data);
+			layerControl.addOverlay(newLayer, "RTD Park-N-Ride");
+		});
+
+		var legend = L.control({position: 'bottomright'});
+		legend.onAdd = function (map) {
+			var div = L.DomUtil.create('div', 'info legend')
+				colors = ['#ffffff','#edf8fb','#b3cde3','#8c96c6','#8856a7','#810f7c'];
+				labels = ['0 - 1%', '1 - 5%', '5 - 10%', '10 - 25%', '25 - 40%','40%+' ];
+			// note that you'll want to change these values to match your classeS
+			div.innerHTML = '<h2>% Age Less Than 18</h2>';
+			// loop through our density intervals and generate a label with a colored square for each interval 
+			    for (var i = 0; i < colors.length; i++) {
+				div.innerHTML += '<i style="background:' + colors[i] + '"></i> ' + labels[i] + '<br>';
+		    }
+		    return div; 
+		};
+		legend.addTo(map);
+			
+
+
+	// end document ready
+	});
+
+</script>
+</head>
+<body>
+
+
+<div id="header">
+	<h1><a href="https://www.census.gov/programs-surveys/acs">Denver 2021 American Community Survey (Census) data 18 & Younger</a></h1>
+	<p>Data from <a href="https://opendata-geospatialdenver.hub.arcgis.com/maps/619c7f836b6e4188b0e0f0458aecba26">Denver Open Data Catalog 18 & Younger</a></p>
+</div>
+<div id="map"></div>
+
+
+</body>
+</html>
