@@ -71,6 +71,13 @@
 		
 
 		// let's add the Denver ACS data -- ##4 here
+		// BEGIN FINAL HERE
+		// OLD - $.getJSON('./acs_denver_2021.geojson', function(data) {
+			//convert geoJSON file into layer for my map
+		// See end of Final Parameters - Part 2
+
+		
+			acsDenver2021Layer = L.geoJSON(data).addTo(map);
 		$.getJSON('./acs_denver_2021.geojson', function(data) {
 			//convert geoJSON file into layer for my map
 			acsDenver2021Layer = L.geoJSON(data).addTo(map);
