@@ -168,13 +168,15 @@ table, th, td {
 
   // Add a polygon
   //Loch Ness poly = NW,SW,SE,NE
-	
-  // var polygon = L.polygon([
+
+  ///var polygon = L.polygon([
     //[13.719444, 144.557778],
     //[13.704444, 144.997222],
     //[13.179444, 144.996944],
     //[13.163056, 144.498889]
 //]).addTo(map);
+	
+		
   
   // shortcut for popups
 marker.bindPopup("<b>National Bridge Inventory Point Features of Guam!</b>").openPopup();
@@ -184,7 +186,7 @@ marker.bindPopup("<b>National Bridge Inventory Point Features of Guam!</b>").ope
   // use Pop-Ups as Layers
   var popup = L.popup()
     .setLatLng([13.404444, 144.696944])
-    .setContent("I am a standalone popup @ the radius point.")
+    .setContent("Infrastructure from the National Bridge Inventory.")
     .openOn(map);
 
   // EVENTS ???
