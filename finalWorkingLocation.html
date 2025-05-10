@@ -206,6 +206,13 @@ map.on('click', onMapClick);
 function displayResult() {
   document.jfsDiv4.innerHTML = "I think I've learned something";
 }
+
+  		$.getJSON('./nbiGUAM.geojson', function(data) {
+       		nbiGUAM = L.geoJSON(data,  
+					   { style: style1 }).addTo(map); 
+ 	 	     map.panTo(nbiGUAM.getBounds().getCenter());
+		layerControl.addOverlay(nbiGUAM, "Guam National Bridge Inventory"); 
+ 	 	     });
 </script>
   <div class="jfsDiv4"> 
     <h2>Familiarizing with HTTP & CSS</h2>
