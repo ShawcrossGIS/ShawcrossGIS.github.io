@@ -208,17 +208,18 @@ function displayResult() {
   document.jfsDiv4.innerHTML = "I think I've learned something";
 }
 
-	//NEW FOR GUAM
-	// the control let's the user turn on / off layers -- ##3 here
-		
-var layerControl = L.control.layers(baseMaps, null).addTo(map);
+//NEW FOR GUAM
 
-  		$.getJSON('./nbiGUAM.geojson', function(data) {
-       		nbiGUAM = L.geoJSON(data,  
-					   { style: style1 }).addTo(map); 
- 	 	     map.panTo(nbiGUAM.getBounds().getCenter());
-		layerControl.addOverlay(nbiGUAM, "Guam National Bridge Inventory"); 
- 	 });
+$.getJSON("nbiGUAM.geojson",function(data){
+// add GeoJSON layer to the map once the file is loaded
+var datalayer = L.geoJson(data ,{
+onEachFeature: function(feature, featureLayer) {
+featureLayer.bindPopup(feature.properties.NAME_1);
+}
+}).addTo(newMap);
+newMap.fitBounds(datalayer.getBounds());
+});
+	
 </script>
   <div class="jfsDiv4"> 
     <h2>Familiarizing with HTTP & CSS</h2>
