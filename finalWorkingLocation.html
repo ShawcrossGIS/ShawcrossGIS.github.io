@@ -159,12 +159,12 @@ table, th, td {
   var marker = L.marker([13.404444, 144.696944]).addTo(map);
   
   // add a circle
-  var circle = L.circle([13.404444, 144.696944], {
-    color: 'green',
-    fillColor: '#00ffcc',
-    fillOpacity: 0,
-    radius: 36350
-}).addTo(map);
+    //var circle = L.circle([13.404444, 144.696944], {
+    //color: 'green',
+    //fillColor: '#00ffcc',
+    //fillOpacity: 0,
+    //radius: 36350
+//}).addTo(map);
 
   // Add a polygon
   //Loch Ness poly = NW,SW,SE,NE
@@ -178,7 +178,7 @@ table, th, td {
   
   // shortcut for popups
 marker.bindPopup("<b>National Bridge Inventory Point Features of Guam!</b>").openPopup();
-circle.bindPopup("Quick Finder Circle.");
+//circle.bindPopup("Quick Finder Circle.");
 // polygon.bindPopup("I am a polygon surrounding the extents of Loch Ness.");
 
   // use Pop-Ups as Layers
