@@ -215,9 +215,12 @@ function displayResult() {
 $.getJSON("nbiGUAM.geojson",function(data){
 // add GeoJSON layer to the map once the file is loaded
 var datalayer = L.geoJson(data ,{
+	style: function (feature) {
+        return {color: feature.properties.color};
 onEachFeature: function(feature, featureLayer) {
 featureLayer.bindPopup(feature.properties.NAME_1);
 }
+	
 }).addTo(newMap);
 newMap.fitBounds(datalayer.getBounds());
 });
