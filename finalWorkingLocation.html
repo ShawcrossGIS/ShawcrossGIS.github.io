@@ -156,10 +156,10 @@ table, th, td {
 }).addTo(map);
   
   // add a marker
-  var marker = L.marker([57.1385522, -4.6682962]).addTo(map);
+  var marker = L.marker([13.404444, 144.696944]).addTo(map);
   
   // add a circle
-  var circle = L.circle([57.1385522, -4.6682962], {
+  var circle = L.circle([13.404444, 144.696944], {
     color: 'green',
     fillColor: '#00ffcc',
     fillOpacity: 0.5,
@@ -169,10 +169,10 @@ table, th, td {
   // Add a polygon
   //Loch Ness poly = NW,SW,SE,NE
   var polygon = L.polygon([
-    [57.4203674, -4.3581830],
-    [57.1452955, -4.6867753],
-    [57.1310713, -4.6530523],
-    [57.3966706, -4.2977473]
+    [13.7, 144.7],
+    [13.0, 144.0],
+    [13.5, 144.5],
+    [13.9, 144.9]
 ]).addTo(map);
   
   // shortcut for popups
@@ -182,7 +182,7 @@ polygon.bindPopup("I am a polygon surrounding the extents of Loch Ness.");
 
   // use Pop-Ups as Layers
   var popup = L.popup()
-    .setLatLng([57.1385522, -4.6682962])
+    .setLatLng([13.404444, 144.696944])
     .setContent("I am a standalone popup @ the radius point.")
     .openOn(map);
 
